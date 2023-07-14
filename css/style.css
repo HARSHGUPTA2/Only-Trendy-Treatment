@@ -17,6 +17,8 @@ body {
     color: var(--text-color);
 }
 
+
+/* CSS for navbar */
 nav {
     background-color: var(--bg-color);
     border-radius: 0.5rem;
