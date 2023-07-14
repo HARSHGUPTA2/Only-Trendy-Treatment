@@ -1,9 +1,74 @@
-*{
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --bg-color: #131921;
+    --text-color: white;
 }
 
 body {
     overflow-x: hidden;
+    color: var(--text-color);
+}
+
+nav {
+    background-color: var(--bg-color);
+    border-radius: 0.5rem;
+    box-shadow: 0 0rem 1rem black;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+nav>a>img {
+    height: 6rem;
+    width: auto;
+    filter: invert(1);
+    margin: 0.5rem;
+    padding: 1rem;
+    transition: all ease 0.5s;
+}
+
+nav>a>img:hover {
+    scale: 1.05;
+}
+
+#searchGroupWithSearchAndOptionBoxes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#optionBox {
+    border-radius: 1rem;
+    height: 4.5rem;
+    width: 4rem;
+    margin: 0 1rem;
+    transition: all ease 0.5s;
+}
+
+#optionBox option:checked {
+    width: auto;
+}
+
+#searchBox {
+    color: gray;
+    border-radius: 0.6rem;
+    margin: 0.2rem 0;
+    padding: 0.6rem 0.6rem;
+    transition: all ease 0.5s;
+}
+
+#searchBox::placeholder {
+    text-align: center;
+}
+
+#searchBox:hover{
+    padding: 0.6rem 3rem;
 }

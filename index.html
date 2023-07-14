@@ -1,13 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Fashion Shop</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
+
 <body>
-    
+    <nav>
+        <a href="#"><img src="company_logo.png" alt="Logo"></a>
+        <div id="searchGroupWithSearchAndOptionBoxes">
+            <select name="optionBox" id="optionBox" onchange="adjustSelectSize(this)">
+                <option value="All" selected>All</option>
+                <option value="Men Support Shoes">Men Support Shoes</option>
+                <option value="Men Watch">Men Watch</option>
+                <option value="Sunglasses and Frames">Sunglasses and Frames</option>
+                <option value="Wallet">Wallet</option>
+                <option value="Belts">Belts</option>
+                <option value="Women Sports Shoes">Women Sports Shoes</option>
+                <option value="Bags">Bags</option>
+            </select>
+            <div>
+                <h3>Find Your Type:</h3>
+                <input type="search" name="Search" id="searchBox" placeholder="Search Here">
+            </div>
+        </div>
+    </nav>
+
+    <script src="js/script.js"></script>
 </body>
+
 </html>
