@@ -1,5 +1,6 @@
-#nav {
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.6);
+.navbar ul li a p {
+    display: inline-block;
+    margin: 0.2rem 1rem;
 }
 
 #productsContainer {
