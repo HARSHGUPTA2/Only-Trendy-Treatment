@@ -1,10 +1,9 @@
 #nav {
-    position: sticky;
-    z-index: 1000;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.6);
 }
 
 #productsContainer {
+    padding: 2rem;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -12,6 +11,7 @@
 }
 
 .card {
+    position: relative;
     margin: 2rem;
     border-radius: 1rem;
     background-color: rgb(83, 83, 83);
@@ -31,7 +31,7 @@
 
 .card-img-top {
     object-fit: cover;
-    border: 0.1rem solid white;
+    border: 0.2rem dashed white;
     width: 15rem;
     height: 11rem;
     margin: 1rem;
@@ -48,6 +48,7 @@
 }
 
 .card-body>p {
+    align-self: center;
     font-style: italic;
 }
 #productsContainer>.btn {
