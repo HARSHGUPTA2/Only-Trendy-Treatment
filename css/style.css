@@ -18,6 +18,7 @@ body {
 
 /* CSS for navbar */
 nav {
+    position: relative;
     width: 100vw;
     /* overflow-x: hidden; */
     background-color: var(--bg-color);
@@ -28,6 +29,7 @@ nav {
 }
 
 nav>a>img {
+    position: relative;
     height: 4.5rem;
     width: auto;
     filter: invert(1);
@@ -73,13 +75,16 @@ nav>a>img:hover {
     align-items: center;
     justify-content: center;
 }
+
 .squareNavOptionGroup>a {
     color: white;
     text-decoration: none;
 }
+
 .squareNavOptionGroup>a>i {
     font-size: 2rem;
 }
-.squareNavOptionGroup>a>h3 {
+
+.squareNavOptionGroup>a {
     text-decoration: none;
 }
