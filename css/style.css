@@ -22,7 +22,6 @@ nav {
     top: 0;
     z-index: 1000;
     width: 100vw;
-    /* overflow-x: hidden; */
     background-color: var(--bg-color);
     box-shadow: 0 0rem 0.2rem black;
     display: flex;
@@ -99,30 +98,4 @@ nav>a>img {
 
 .squareNavOptionGroup>a {
     text-decoration: none;
-}
-
-/* CSS for Image Scroller */
-#imageScroller {
-    width: 100%;
-    overflow: hidden;
-}
-
-.scroller-container {
-    display: flex;
-    animation: scroll 5s linear infinite;
-}
-
-.scroller-container img {
-    width: 100%;
-    height: auto;
-}
-
-@keyframes scroll {
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(-100%);
-    }
 }
