@@ -55,6 +55,17 @@ nav>a>img:hover {
     width: 4rem;
     transition: width ease 0.5s;
     text-align: center;
+    /* Hide the default arrow */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    /* Add custom arrow */
+    background-image: url('../DropDownArrow.png');
+    background-position: right 0.4rem center;
+    background-repeat: no-repeat;
+    background-size: 0.6rem;
+    padding-right: 1rem;
+    -webkit-padding-end: 1rem; /* For Safari support */
 }
 
 #optionBox option:checked {
