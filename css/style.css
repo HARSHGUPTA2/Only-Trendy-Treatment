@@ -65,7 +65,9 @@ nav>a>img:hover {
     background-repeat: no-repeat;
     background-size: 0.6rem;
     padding-right: 1rem;
-    -webkit-padding-end: 1rem; /* For Safari support */
+
+    /* For Safari support */
+    -webkit-padding-end: 1rem;
 }
 
 #optionBox option:checked {
