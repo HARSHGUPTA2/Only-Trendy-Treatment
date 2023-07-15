@@ -8,7 +8,7 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 
 .card {
@@ -20,10 +20,20 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    height: 27rem;
+    transition: all ease 0.5s;
+    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.6);
+}
+
+.card:hover {
+    scale: 1.1;
 }
 
 .card-img-top {
+    object-fit: cover;
+    border: 0.1rem solid white;
     width: 15rem;
+    height: 11rem;
     margin: 1rem;
     border-radius: 1rem;
 }
