@@ -39,10 +39,6 @@ nav>a>img {
     transition: all ease 0.5s;
 }
 
-nav>a>img:hover {
-    scale: 1.05;
-}
-
 #searchGroupWithSearchAndOptionBoxes {
     display: flex;
     align-items: center;
