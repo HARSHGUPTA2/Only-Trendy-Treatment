@@ -10,57 +10,56 @@
 </head>
 
 <body>
-    <header>
-        <nav class="navbar navbar-inverse"
-            style="position: fixed; width: 100vw; top: 0; z-index: 1000; box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.6);">
-            <div class="container-fluid">
-                <ul class="nav navbar-nav" id="nav">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="all-categories.html">All Categories</a></li>
-                    <li><a href="#">All Products</a></li>
-                </ul>
-                <form class="navbar-form navbar-left" action="/action_page.php">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search" name="search">
-                        <div class="input-group-btn">
-                            <button class="btn btn-default" type="submit">
-                                <i class="glyphicon glyphicon-search"></i>
-                            </button>
-                        </div>
+    <nav class="navbar navbar-inverse"
+        style="position: fixed; width: 100vw; top: 0; z-index: 1000; box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.6);">
+        <div class="container-fluid" style="display: flex; justify-content: space-around; align-items: center;">
+            <ul class="nav navbar-nav" id="nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="all-categories.html">All Categories</a></li>
+                <li><a href="#">All Products</a></li>
+            </ul>
+            <form class="navbar-form navbar-left" action="/action_page.php">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search" name="search">
+                    <div class="input-group-btn">
+                        <button class="btn btn-default" type="submit">
+                            <i class="glyphicon glyphicon-search"></i>
+                        </button>
                     </div>
-                </form>
-                <div class="navbar-header">
-                    <p
-                        style="font-size: x-large; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; padding-left: 80px; text-align: center; color: white; padding-top: 10px;">
-                        The Fashion Shop</p>
                 </div>
-                <ul class="nav navbar-nav navbar-right" id="nav">
-                    <li><a href="#"><span class="glyphicon glyphicon-user"></span>
-                            <p>Sign Up</p>
-                        </a></li>
-                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span>
-                            <p>Login</p>
-                        </a></li>
-                </ul>
+            </form>
+            <div class="navbar-header">
+                <p
+                    style="font-size: x-large; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; text-align: center; color: white; padding-top: 10px;">
+                    The Fashion Shop</p>
             </div>
-            </div>
-        </nav>
-    </header>
+        </div>
+        </div>
+    </nav>
 
-    <section id="adminPanelContainer" style="margin: 8rem; display: flex; align-items: center; justify-content: center;">
+    <section id="adminPanelContainer"
+        style="margin: 8rem; display: flex; align-items: center; justify-content: center;">
         <section id="adminPanelContainer" style="margin: 8rem;">
             <form class="form-signin">
-                <img class="mb-4" src="" alt=""
-                    width="72" height="72">
-                <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+                <img class="mb-4" src="images/admin-panel-top-image.png" alt="The Fashion Shop" width="auto"
+                    height="130">
+                <!-- <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1> -->
                 <label for="inputEmail" class="sr-only">Product Name</label>
-                <input type="text" id="inputProductName" class="form-control" placeholder="Product Name" required=""
-                    autofocus="">
-                <label for="inputPassword" class="sr-only">Product Price</label>
-                <input type="number" id="inputProductPrice" class="form-control" placeholder="Product Price" required="">
+                <input type="text" id="inputProductName" class="form-control" placeholder="Product Name" required
+                    autofocus>
+
+                <label for="inputProductPrice" class="sr-only">Product Price(in Indian Rupee)</label>
+                <input type="number" id="inputProductPrice" class="form-control"
+                    placeholder="Product Price(in Indian Rupee)" required>
+
                 <label for="inputProductImageLink" class="sr-only">Product Image Link</label>
-                <input type="number" id="inputProductImageLink" class="form-control" placeholder="Product Image Link" required="">
-                <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+                <input type="url" id="inputProductImageLink" class="form-control" placeholder="Product Image Link"
+                    required>
+
+                <label for="inputPassword" class="sr-only">Password</label>
+                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+
+                <button class="btn btn-lg btn-primary btn-block" type="submit" style="margin-top: 1rem;">Post</button>
             </form>
         </section>
     </section>
