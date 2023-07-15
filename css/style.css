@@ -31,6 +31,7 @@ nav {
 nav>a>img {
     position: relative;
     height: 4.5rem;
+    scale: 2;
     width: auto;
     filter: invert(1);
     margin: 0.5rem;
