@@ -1,5 +1,49 @@
-#nav{
+#nav {
     height: 60px;
     font-family: cursive;
     font-size: larger;
+}
+
+#productsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.card {
+    margin: 2rem;
+    border-radius: 1rem;
+    background-color: rgb(83, 83, 83);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-img-top {
+    width: 15rem;
+    margin: 1rem;
+    border-radius: 1rem;
+}
+
+.card-body {
+    margin: 1rem;
+}
+
+.card-title {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+#productsContainer>.btn {
+    background-color: rgb(203, 203, 203);
+    color: black;
+    margin: 1rem;
+    transition: all ease 0.5s;
+}
+
+#productsContainer>.btn:hover {
+    background-color: gray;
 }
