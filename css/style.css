@@ -1,7 +1,7 @@
 #nav {
-    height: 60px;
-    font-family: cursive;
-    font-size: larger;
+    position: sticky;
+    z-index: 1000;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.6);
 }
 
 #productsContainer {
@@ -47,6 +47,9 @@
     font-weight: bold;
 }
 
+.card-body>p {
+    font-style: italic;
+}
 #productsContainer>.btn {
     background-color: rgb(203, 203, 203);
     color: black;
