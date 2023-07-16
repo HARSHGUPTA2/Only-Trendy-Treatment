@@ -68,3 +68,10 @@
 .curved-border {
     border-radius: 5rem;
 }
+
+.item-card {
+    display: flex;
+}
+.item-card:hover {
+    scale: 1;
+}
