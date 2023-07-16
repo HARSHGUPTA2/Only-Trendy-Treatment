@@ -75,3 +75,7 @@
 .item-card:hover {
     scale: 1;
 }
+
+.form-signin>input {
+    margin: 0.1rem;
+}
