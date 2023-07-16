@@ -52,6 +52,7 @@
     align-self: center;
     font-style: italic;
 }
+
 #productsContainer>.btn {
     background-color: rgb(203, 203, 203);
     color: black;
@@ -61,4 +62,9 @@
 
 #productsContainer>.btn:hover {
     background-color: gray;
+}
+
+/* Utility Class */
+.curved-border {
+    border-radius: 5rem;
 }
