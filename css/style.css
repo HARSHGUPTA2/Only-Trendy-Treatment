@@ -162,3 +162,13 @@
     color: black;
     font-weight: 500;
 }
+
+/* Media Queries */
+@media (max-width:768px) {
+    nav {
+        display: none;
+    }
+    nav-on-phone {
+        display: block;
+    }
+}
