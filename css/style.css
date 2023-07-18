@@ -1,3 +1,8 @@
+* {
+    font-family: 'Gilroy';
+    box-sizing: border-box;
+}
+
 .navbar ul li a p {
     display: inline-block;
     margin: 0.2rem 1rem;
@@ -72,10 +77,88 @@
 .item-card {
     display: flex;
 }
+
 .item-card:hover {
     scale: 1;
 }
 
 .form-signin>input {
     margin: 0.1rem;
+}
+
+/* CSS for Item Card */
+
+.container {
+    padding: 5rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.item-card {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(242, 242, 242);
+    border-radius: 1rem;
+    margin: 1rem 2rem;
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.2);
+    transition: all ease 0.5s;
+}
+
+.item-card:hover {
+    scale: 1.05;
+}
+
+.item-card>img {
+    border-top-right-radius: 1rem;
+    border-top-left-radius: 1rem;
+    height: 20rem;
+    width: 20rem;
+    object-fit: cover;
+}
+
+.item-card>div>p>b {
+    font-family: monospace;
+    background-color: gray;
+    color: white;
+    padding: 0 0.5rem;
+    border-radius: 50%;
+}
+
+.item-card>div>h5 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 2rem;
+}
+
+.item-card>div>h5>i {
+    font-weight: 800;
+    font-size: 2.1rem;
+}
+
+.whatsappOrderButton {
+    background-color: green;
+    color: white;
+    font-weight: 700;
+    height: 5rem;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    border: none;
+    transition: all ease 0.5s;
+}
+
+.whatsappOrderButton:hover {
+    background-color: rgb(55, 219, 55);
+    color: white;
+}
+
+#sortButtons>button {
+    box-shadow: 0 1px 4px 1px rgba(0, 0, 0, 0.4);
+    border-radius: 2rem;
+    background-color: aqua;
+    color: black;
+    font-weight: 500;
 }

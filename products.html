@@ -7,6 +7,7 @@
     <title>Shoes | The Fashion Shop</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body>
@@ -47,22 +48,19 @@
 
     <center>
         <section style="margin-top: 8rem;">
-            <h2 style="font-weight: 600;">All products</h2>
-            <div class="container" style="width: 300px;">
-                <div class="card item-card" style="border: 2px dashed white;">
-                    <img class="card-img-top" src="scroller-images/shoes.png" alt="Shoes">
-                    <div class="card-body">
-                        <h5 class="card-title">Shoes</h5>
-                        <p class="card-text">Trendy kicks!</p>
-                        <a href="shoes.html" class="btn btn-primary" style="background-color: green;">Order on Whatsapp</a>
-                    </div>
-                </div>
+            <h2 style="font-weight: 800;">ALL PRODUCTS</h2>
+            <div id="sortButtons">
+                <button id="sortByPriceButton">Sort By Price</button>
+            </div>
+            <div class="container">
+                <!-- Products will be dynamically added here by Javascript -->
             </div>
         </section>
     </center>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="js/script-products.js"></script>
 </body>
 
 </html>
