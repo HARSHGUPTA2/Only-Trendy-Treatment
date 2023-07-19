@@ -25,5 +25,5 @@ app.get('/products', (req, res) => {
 // Add more routes for other HTML files if needed
 
 app.listen(port, () => {
-  console.log(`App is listening on port ${port}`);
+  console.log(`App is listening on port http://localhost:${port}`);
 });
