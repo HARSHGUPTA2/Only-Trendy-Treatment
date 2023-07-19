@@ -7,6 +7,9 @@
     <title>Admin Panel | THE FASHION SHOP</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/live/3.1/firebase.js"></script>
 </head>
 
 <body>
@@ -59,12 +62,12 @@
                 <label for="inputPassword" class="sr-only">Password</label>
                 <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
 
-                <button class="btn btn-lg btn-primary btn-block" type="submit" style="margin-top: 1rem;">Post</button>
+                <button class="btn btn-lg btn-primary btn-block" type="submit"  onclick="send()" style="margin-top: 1rem;">Post</button>
             </form>
         </section>
     </section>
-
-    <script src="main.js"> </script>
+    
+    <script src="admin.js"> </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </body>
