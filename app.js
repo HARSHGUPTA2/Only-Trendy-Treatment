@@ -10,7 +10,7 @@ app.set('views', './');
 app.set(express.static('scroller-images'));
 
 app.get('/', (req, res) => {
-    res.status(200).render('home');
+    res.status(200).render('index.html');
 });
 
 app.post('/', (req, res) => {
