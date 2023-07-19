@@ -11,10 +11,11 @@ var firebaseConfig = {
   firebase.initializeApp(firebaseConfig);
   
      function send(){
-        msg=document.getElementById("inputProductImageLink").value;
-        user_name =document.getElementById("inputProductPrice").value; 
-        room_name =document.getElementById("inputProductName").value;
-        firebase.database().ref(room_name).push({ name:user_name, message:msg , product:room_name });
+        p_img=document.getElementById("inputProductImageLink").value;
+        p_price=document.getElementById("inputProductPrice").value; 
+        p_name=document.getElementById("inputProductName").value;
+        p_size=document.getElementById("inputProductsize").value;
+        firebase.database().ref(p_name).push({ name:p_name, price:p_price , image:p_img , size:p_size });
               alert("data");
        }
 
