@@ -1,48 +1,29 @@
 const express = require('express');
+const path = require('path');
+
 const app = express();
 const port = 3000;
-const bodyParser = require('body-parser');
-app.use(bodyParser.urlencoded({ extended: true }));
 
-main().catch(err => console.log(err));
+// Set the static directories to serve CSS, JS, and images
+app.use('/css', express.static(path.join(__dirname, 'css')));
+app.use('/js', express.static(path.join(__dirname, 'js')));
+app.use('/images', express.static(path.join(__dirname, 'images')));
 
-app.set('views', './');
-app.set(express.static('scroller-images'));
-
+// Route to serve each HTML file
 app.get('/', (req, res) => {
-    res.status(200).render('index.html');
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-app.post('/', (req, res) => {
-    res.status(200).render('confirm', { 
-        fullNameField : req.body.fullName,
-        emailField : req.body.email,
-        mobileNumberField : req.body.mobileNumber,
-        messageField : req.body.message,
-        optionChosenField : req.body.optionChosen,
-     });
+app.get('/all-categories', (req, res) => {
+  res.sendFile(path.join(__dirname, 'all-categories.html'));
 });
 
-// Taking form-input and saving it to database
-app.post('/confirm', (req, res) => {
-    const { fullName, email, mobileNumber, optionChosen, message } = req.body;
-    const newContact = new Contact({
-        fullName: fullName,
-        email: email,
-        mobileNumber: mobileNumber,
-        optionChosen: optionChosen,
-        message: message,
-    });
+app.get('/products', (req, res) => {
+    res.sendFile(path.join(__dirname, 'products.html'));
+  });
 
-    newContact.save()
-        .then(() => {
-            res.status(200).render('succesful');
-        })
-        .catch(error => {
-            console.log(error);
-        });
-});
+// Add more routes for other HTML files if needed
 
 app.listen(port, () => {
-    console.log(`Website live on port ${port}`);
+  console.log(`App is listening on port ${port}`);
 });
