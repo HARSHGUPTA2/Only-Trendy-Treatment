@@ -17,5 +17,5 @@ function send() {
    p_name = document.getElementById("inputProductName").value;
    p_size = document.getElementById("inputProductsize").value;
    firebase.database().ref(p_name).push({ name: p_name, price: p_price, image: p_img, size: p_size });
-   alert("data");
+   alert("data sended");
 }
