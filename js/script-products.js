@@ -1,21 +1,45 @@
-// Sample product data. Replace this with your actual product data.
-const products = [
-    {
-        id: 1,
-        name: 'Adidas',
-        size: 9,
-        price: 2399,
-        imageUrl: 'images/shoes-img-1.jpg',
-    },
-    {
-        id: 2,
-        name: 'Goldmine',
-        size: 8,
-        price: 1999,
-        imageUrl: 'images/shoes-img-1.jpg',
-    },
-    // Add more products here...
-];
+var firebaseConfig = {
+    apiKey: "AIzaSyCIWXi9GrS6byc_eBEee9QeAZjcuJf1Hxs",
+    authDomain: "shop-st.firebaseapp.com",
+    databaseURL: "https://shop-st-default-rtdb.firebaseio.com",
+    projectId: "shop-st",
+    storageBucket: "shop-st.appspot.com",
+    messagingSenderId: "630265001609",
+    appId: "1:630265001609:web:921d37e6923ca4b8edf858",
+    measurementId: "G-CBW6C7G22J"
+ };
+ 
+ firebase.initializeApp(firebaseConfig);
+ // Access the database
+var database = firebase.database();
+
+// Read data from a specific path
+let products;
+var ref = database.ref('/');
+ref.once('value', function(snapshot) {
+  var data = snapshot.val();
+  // Use the retrieved data
+  console.log(data);
+  products = data
+});
+
+// products = [
+//     {
+//         id: 1,
+//         name: 'Adidas',
+//         size: 9,
+//         price: 2399,
+//         imageUrl: 'images/shoes-img-1.jpg',
+//     },
+//     {
+//         id: 2,
+//         name: 'Goldmine',
+//         size: 8,
+//         price: 1999,
+//         imageUrl: 'images/shoes-img-1.jpg',
+//     },
+//     // Add more products here...
+// ];
 
 // Function to generate the product list items
 function generateProductList() {
@@ -50,7 +74,7 @@ function generateProductList() {
         orderButton.textContent = 'ORDER ON WHATSAPP';
 
         // Add the click event to open WhatsApp with a custom message
-        const whatsappUrl = `https://wa.me/919199322688/?text=Hello%20bro!`;
+        const whatsappUrl = `https://wa.me/919199322655/?text=Hello%20bro!`;
         orderButton.onclick = function () {
             window.location.href = whatsappUrl;
         };
