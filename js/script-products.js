@@ -23,23 +23,23 @@ ref.once('value', function(snapshot) {
   products = data
 });
 
-// products = [
-//     {
-//         id: 1,
-//         name: 'Adidas',
-//         size: 9,
-//         price: 2399,
-//         imageUrl: 'images/shoes-img-1.jpg',
-//     },
-//     {
-//         id: 2,
-//         name: 'Goldmine',
-//         size: 8,
-//         price: 1999,
-//         imageUrl: 'images/shoes-img-1.jpg',
-//     },
-//     // Add more products here...
-// ];
+products = [
+    {
+        id: 1,
+        name: 'Adidas',
+        size: 9,
+        price: 2399,
+        imageUrl: 'images/shoes-img-1.jpg',
+    },
+    {
+        id: 2,
+        name: 'Goldmine',
+        size: 8,
+        price: 1999,
+        imageUrl: 'images/shoes-img-1.jpg',
+    },
+    // Add more products here...
+];
 
 // Function to generate the product list items
 function generateProductList() {
