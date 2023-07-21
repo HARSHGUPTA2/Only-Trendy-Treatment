@@ -22,6 +22,10 @@ app.get('/products', (req, res) => {
     res.sendFile(path.join(__dirname, 'products.html'));
   });
 
+app.get('/admin', (req, res) => {
+    res.sendFile(path.join(__dirname, 'admin.html'));
+  });
+
 // Add more routes for other HTML files if needed
 
 app.listen(port, () => {
