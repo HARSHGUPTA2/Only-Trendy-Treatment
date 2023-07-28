@@ -15,14 +15,22 @@ function send() {
    p_price = document.getElementById("inputProductPrice").value;
    p_name = document.getElementById("inputProductName").value;
    p_size = document.getElementById("inputProductsize").value;
-   firebase.database().ref(p_name).push({ name: p_name, price: p_price, image: p_img, size: p_size });
-   alert("data sended");
+   firebase.database().ref(p_name).push({
+      name: p_name,
+      price: p_price,
+      image: p_img,
+      size: p_size
+   });
+   alert("Data sent!");
 }
 
 function getData() {
    firebase.database().ref("/" + p_name).on('value', function (snapshot) {
-      document.getElementById("output").innerHTML = ""; snapshot.forEach(function (childSnapshot) {
-         childKey = childSnapshot.key; childData = childSnapshot.val(); if (childKey != "purpose") {
+      document.getElementById("output").innerHTML = "";
+      snapshot.forEach(function (childSnapshot) {
+         childKey = childSnapshot.key;
+         childData = childSnapshot.val();
+         if (childKey != "purpose") {
             firebase_message_id = childKey;
             message_data = childData;
             //Start code
