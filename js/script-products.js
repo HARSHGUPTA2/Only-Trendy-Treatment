@@ -7,32 +7,17 @@ var firebaseConfig = {
     messagingSenderId: "630265001609",
     appId: "1:630265001609:web:921d37e6923ca4b8edf858",
     measurementId: "G-CBW6C7G22J"
- };
- 
- firebase.initializeApp(firebaseConfig);
- // Access the database
-var database = firebase.database();
+};
+firebase.initializeApp(firebaseConfig);
 
-// Read data from a specific path
-let products;
-var ref = database.ref('/');
-ref.once('value', function(snapshot) {
-  var data = snapshot.val();
-  // Use the retrieved data
-  console.log(data);
-  products = data
-});
-
-products = [
+let products = [
     {
-        id: 1,
         name: 'Adidas',
         size: 9,
         price: 2399,
         imageUrl: 'images/shoes-img-1.jpg',
     },
     {
-        id: 2,
         name: 'Goldmine',
         size: 8,
         price: 1999,
@@ -40,6 +25,23 @@ products = [
     },
     // Add more products here...
 ];
+
+function getData() {
+    firebase.database().ref("products").on('value', snapshot => {
+        snapshot.forEach(childSnapshot => {
+            childData = childSnapshot.val(); // fetching data stored in one of the nodes
+
+            products.push({
+                name: childData.name,
+                price: childData.price,
+                size: childData.size,
+                imageUrl: childData.image,
+            });
+
+        });
+    });
+}
+getData();
 
 // Function to generate the product list items
 function generateProductList() {
@@ -49,7 +51,6 @@ function generateProductList() {
         // Create the main div container for the product card
         const productItem = document.createElement('div');
         productItem.classList.add('item-card');
-        productItem.id = `product-${product.id}`;
 
         // Create the image element
         const imgElement = document.createElement('img');
@@ -92,12 +93,10 @@ function generateProductList() {
     });
 }
 
+generateProductList();
+
 function sortByPrice() {
     products.sort((a, b) => a.price - b.price);
     generateProductList();
 }
-
 document.getElementById('sortByPriceButton').addEventListener('click', sortByPrice);
-
-// Initial product list generation
-generateProductList();
