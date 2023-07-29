@@ -15,17 +15,17 @@ function send() {
    p_price = document.getElementById("inputProductPrice").value;
    p_name = document.getElementById("inputProductName").value;
    p_size = document.getElementById("inputProductsize").value;
-   firebase.database().ref(p_name).push({
+   firebase.database().ref('products').push({
       name: p_name,
       price: p_price,
       image: p_img,
       size: p_size
-   });
+   }); 
    alert("Data sent!");
 }
 
 function getData() {
-   firebase.database().ref("/" + p_name).on('value', function (snapshot) {
+   firebase.database().ref("products").on('value', function (snapshot) {
       document.getElementById("output").innerHTML = "";
       snapshot.forEach(function (childSnapshot) {
          childKey = childSnapshot.key;

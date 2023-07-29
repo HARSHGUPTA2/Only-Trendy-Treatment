@@ -7,23 +7,10 @@ var firebaseConfig = {
     messagingSenderId: "630265001609",
     appId: "1:630265001609:web:921d37e6923ca4b8edf858",
     measurementId: "G-CBW6C7G22J"
- };
- 
- firebase.initializeApp(firebaseConfig);
- // Access the database
-var database = firebase.database();
+};
+firebase.initializeApp(firebaseConfig);
 
-// Read data from a specific path
-let products;
-var ref = database.ref('/');
-ref.once('value', function(snapshot) {
-  var data = snapshot.val();
-  // Use the retrieved data
-  console.log(data);
-  products = data
-});
-
-products = [
+let products = [
     {
         name: 'Adidas',
         size: 9,
@@ -38,6 +25,23 @@ products = [
     },
     // Add more products here...
 ];
+
+function getData() {
+    firebase.database().ref("products").on('value', snapshot => {
+        snapshot.forEach(childSnapshot => {
+            childData = childSnapshot.val(); // fetching data stored in one of the nodes
+
+            products.push({
+                name: childData.name,
+                price: childData.price,
+                size: childData.size,
+                imageUrl: childData.image,
+            });
+
+        });
+    });
+}
+getData();
 
 // Function to generate the product list items
 function generateProductList() {
@@ -89,12 +93,10 @@ function generateProductList() {
     });
 }
 
+generateProductList();
+
 function sortByPrice() {
     products.sort((a, b) => a.price - b.price);
     generateProductList();
 }
-
 document.getElementById('sortByPriceButton').addEventListener('click', sortByPrice);
-
-// Initial product list generation
-generateProductList();
