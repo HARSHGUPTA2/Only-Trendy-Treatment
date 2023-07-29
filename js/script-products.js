@@ -75,7 +75,7 @@ function generateProductList() {
         orderButton.textContent = 'ORDER ON WHATSAPP';
 
         // Add the click event to open WhatsApp with a custom message
-        const whatsappUrl = `https://wa.me/919199322655/?text=Hello%20bro!`;
+        const whatsappUrl = `https://wa.me/919910877162/?text=I want to order ${product.name} of ${product.size} for ${product.price}!👌🚀`;
         orderButton.onclick = function () {
             window.location.href = whatsappUrl;
         };
