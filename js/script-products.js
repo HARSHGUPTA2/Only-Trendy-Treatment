@@ -26,22 +26,31 @@ let products = [
     // Add more products here...
 ];
 
+// Wrap the getData function in a Promise
 function getData() {
+  return new Promise((resolve, reject) => {
     firebase.database().ref("products").on('value', snapshot => {
-        snapshot.forEach(childSnapshot => {
-            childData = childSnapshot.val(); // fetching data stored in one of the nodes
+    snapshot.forEach(childSnapshot => {
 
-            products.push({
-                name: childData.name,
-                price: childData.price,
-                size: childData.size,
-                imageUrl: childData.image,
-            });
+        childData = childSnapshot.val(); // fetching data stored in one of the nodes
 
+        products.push({
+          name: childData.name,
+          price: childData.price,
+          size: childData.size,
+          imageUrl: childData.image,
         });
-    });
+      });
+
+      resolve(); // Resolve the Promise after data retrieval and processing is complete
+    }, reject); // In case of any error, reject the Promise
+  });
 }
-getData();
+
+// Use the Promise to ensure getData completes before calling generateProductList
+getData().then(() => {
+  generateProductList();
+});
 
 // Function to generate the product list items
 function generateProductList() {
@@ -93,10 +102,9 @@ function generateProductList() {
     });
 }
 
-generateProductList();
-
 function sortByPrice() {
     products.sort((a, b) => a.price - b.price);
     generateProductList();
 }
+
 document.getElementById('sortByPriceButton').addEventListener('click', sortByPrice);
