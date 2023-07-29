@@ -28,28 +28,28 @@ let products = [
 
 // Wrap the getData function in a Promise
 function getData() {
-  return new Promise((resolve, reject) => {
-    firebase.database().ref("products").on('value', snapshot => {
-    snapshot.forEach(childSnapshot => {
+    return new Promise((resolve, reject) => {
+        firebase.database().ref("products").on('value', snapshot => {
+            snapshot.forEach(childSnapshot => {
 
-        childData = childSnapshot.val(); // fetching data stored in one of the nodes
+                childData = childSnapshot.val(); // fetching data stored in one of the nodes
 
-        products.push({
-          name: childData.name,
-          price: childData.price,
-          size: childData.size,
-          imageUrl: childData.image,
-        });
-      });
+                products.push({
+                    name: childData.name,
+                    price: childData.price,
+                    size: childData.size,
+                    imageUrl: childData.image,
+                });
+            });
 
-      resolve(); // Resolve the Promise after data retrieval and processing is complete
-    }, reject); // In case of any error, reject the Promise
-  });
+            resolve(); // Resolve the Promise after data retrieval and processing is complete
+        }, reject); // In case of any error, reject the Promise
+    });
 }
 
 // Use the Promise to ensure getData completes before calling generateProductList
 getData().then(() => {
-  generateProductList();
+    generateProductList();
 });
 
 // Function to generate the product list items
