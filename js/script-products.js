@@ -25,14 +25,12 @@ ref.once('value', function(snapshot) {
 
 products = [
     {
-        id: 1,
         name: 'Adidas',
         size: 9,
         price: 2399,
         imageUrl: 'images/shoes-img-1.jpg',
     },
     {
-        id: 2,
         name: 'Goldmine',
         size: 8,
         price: 1999,
@@ -49,7 +47,6 @@ function generateProductList() {
         // Create the main div container for the product card
         const productItem = document.createElement('div');
         productItem.classList.add('item-card');
-        productItem.id = `product-${product.id}`;
 
         // Create the image element
         const imgElement = document.createElement('img');
