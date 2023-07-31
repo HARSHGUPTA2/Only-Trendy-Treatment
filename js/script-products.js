@@ -15,33 +15,42 @@ let products = [
         name: 'Adidas',
         size: 9,
         price: 2399,
-        imageUrl: 'images/shoes-img-1.jpg',
+        imageUrl: 'https://rukminim2.flixcart.com/image/832/832/l51d30w0/shoe/z/w/c/10-mrj1914-10-aadi-white-black-red-original-imagft9k9hydnfjp.jpeg?q=70',
     },
     {
         name: 'Goldmine',
         size: 8,
         price: 1999,
-        imageUrl: 'images/shoes-img-1.jpg',
+        imageUrl: 'https://rukminim2.flixcart.com/image/612/612/l1xwqkw0/shoe/3/p/q/8-zigzag-wh-8-brainer-white-original-imagdeamrbec6xgf.jpeg?q=70',
     },
     // Add more products here...
 ];
 
+// Wrap the getData function in a Promise
 function getData() {
-    firebase.database().ref("products").on('value', snapshot => {
-        snapshot.forEach(childSnapshot => {
-            childData = childSnapshot.val(); // fetching data stored in one of the nodes
+    return new Promise((resolve, reject) => {
+        firebase.database().ref("products").on('value', snapshot => {
+            snapshot.forEach(childSnapshot => {
 
-            products.push({
-                name: childData.name,
-                price: childData.price,
-                size: childData.size,
-                imageUrl: childData.image,
+                childData = childSnapshot.val(); // fetching data stored in one of the nodes
+
+                products.push({
+                    name: childData.name,
+                    price: childData.price,
+                    size: childData.size,
+                    imageUrl: childData.image,
+                });
             });
 
-        });
+            resolve(); // Resolve the Promise after data retrieval and processing is complete
+        }, reject); // In case of any error, reject the Promise
     });
 }
-getData();
+
+// Use the Promise to ensure getData completes before calling generateProductList
+getData().then(() => {
+    generateProductList();
+});
 
 // Function to generate the product list items
 function generateProductList() {
@@ -93,10 +102,9 @@ function generateProductList() {
     });
 }
 
-generateProductList();
-
 function sortByPrice() {
     products.sort((a, b) => a.price - b.price);
     generateProductList();
 }
+
 document.getElementById('sortByPriceButton').addEventListener('click', sortByPrice);
