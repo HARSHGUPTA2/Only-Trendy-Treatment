@@ -170,21 +170,3 @@
     font-weight: 500;
 }
 
-/* Media Queries */
-@media (max-width:768px) {
-    nav {
-        display: none;
-    }
-    .container-fluid {
-        display: none;
-    }
-    #contact>h5 {
-        font-size: 1rem;
-    }
-    #contact>div>h3 {
-        font-size: 1.3rem;
-    }
-    #contact>div>h5 {
-        font-size: 0.8rem;
-    }
-}
